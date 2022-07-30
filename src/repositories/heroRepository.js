@@ -20,6 +20,11 @@ class HeroRepository {
     await writeFile(this.file, JSON.stringify(currentData))
     return data.id
   }
+
+  async countItens() {
+    const currentData = await this._currentFileContent()
+    return currentData.length
+  }
 }
 
 module.exports = HeroRepository
