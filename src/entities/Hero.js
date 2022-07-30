@@ -22,7 +22,7 @@ class Hero {
       throw new MissingParamError('name')
     }
 
-    if (typeof data.id !== 'string') {
+    if (typeof data.name !== 'string') {
       throw new InvalidParamError('name')
     }
 

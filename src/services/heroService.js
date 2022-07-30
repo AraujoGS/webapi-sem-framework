@@ -21,7 +21,7 @@ class HeroService {
     const totalItens = await this.repository.countItens()
     const hero = new Hero({
       ...data,
-      id: totalItens++
+      id: (totalItens + 1)
     })
     return this.repository.create(hero)
   }
