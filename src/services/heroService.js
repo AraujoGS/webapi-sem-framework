@@ -1,4 +1,5 @@
-const Hero = require('../entities/Hero')
+const Hero = require('../entities/hero')
+const MissingParamError = require('../errors/missingParamError')
 
 class HeroService {
   constructor({ heroRepository }) {
@@ -6,7 +7,7 @@ class HeroService {
   }
 
   async find(itemId) {
-    if (!itemId) throw new Error('É necessário informar o id')
+    if (!itemId) throw new MissingParamError('id')
     return this.repository.find(itemId)
   }
 
